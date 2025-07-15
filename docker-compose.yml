@@ -1,0 +1,27 @@
+services:
+  socks-anonimizer:
+    build:
+      context: ./service
+      args:
+        PROXY_PASSWORD: ${PROXY_PASSWORD}
+    container_name: socks-anonimizer
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    privileged: true
+    environment:
+      OPENVPN_USERNAME: ${OPENVPN_USERNAME}
+      OPENVPN_PASSWORD: ${OPENVPN_PASSWORD}
+      NORDVPN_CONFIG: ${NORDVPN_CONFIG:-us6914.nordvpn.com.tcp.ovpn}
+    ports:
+      - "1080:1080"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail -s --socks5 127.0.0.1:1080 --proxy-user proxyuser:${PROXY_PASSWORD} https://www.google.com"]
+      interval: 120s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+      
