@@ -2,7 +2,7 @@
   <img src=".img/logo.png" alt="Socks anonymizer Logo" width="300"/>
 </p>
 
-# SOCKS anonymizer - VPN SOCKS5 Proxy (Docker Compose)
+# SOCKS anonymizer - VPN SOCKS5 Proxy
 
 SOCKS anonymizer is a Docker-based solution that provides a secure SOCKS5 proxy (powered by Dante) routing all your traffic through NordVPN (OpenVPN).
 
