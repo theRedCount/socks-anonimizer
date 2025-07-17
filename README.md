@@ -1,10 +1,10 @@
 <p align="center">
-  <img src=".img/logo.png" alt="Socks Anonimizer Logo" width="300"/>
+  <img src=".img/logo.png" alt="Socks anonymizer Logo" width="300"/>
 </p>
 
-# SOCKS Anonimizer - VPN SOCKS5 Proxy (Docker Compose)
+# SOCKS anonymizer - VPN SOCKS5 Proxy (Docker Compose)
 
-SOCKS Anonimizer is a Docker-based solution that provides a secure SOCKS5 proxy (powered by Dante) routing all your traffic through NordVPN (OpenVPN).
+SOCKS anonymizer is a Docker-based solution that provides a secure SOCKS5 proxy (powered by Dante) routing all your traffic through NordVPN (OpenVPN).
 
 ## Features
 
@@ -37,7 +37,7 @@ SOCKS Anonimizer is a Docker-based solution that provides a secure SOCKS5 proxy 
         └── gb789.nordvpn.com.tcp.ovpn
 ```bash
 git clone <repo-url>
-cd socks-anonimizer
+cd socks-anonymizer
 ````
 
 2. Create a `.env` file based on the provided example
@@ -52,7 +52,7 @@ Edit `.env` and insert your credentials:
 OPENVPN_USERNAME=your_nordvpn_username
 OPENVPN_PASSWORD=your_nordvpn_password
 NORDVPN_CONFIG=us6918.nordvpn.com.tcp.ovpn
-PROXY_PASSWORD=socks-anonimizer-password
+PROXY_PASSWORD=socks-anonymizer-password
 ```
 
 3. Build and run the container
@@ -68,10 +68,10 @@ docker-compose up -d
 
 ```bash
 # From the local machine:
-curl -x socks5h://proxyuser:socks-anonimizer-password@localhost:1080 https://ip.me
+curl -x socks5h://proxyuser:socks-anonymizer-password@localhost:1080 https://ip.me
 
 # From a remote machine:
-curl -x socks5h://proxyuser:socks-anonimizer-password@<your_server_public_ip>:1080 https://ip.me
+curl -x socks5h://proxyuser:socks-anonymizer-password@<your_server_public_ip>:1080 https://ip.me
 ```
 
 You can use either `localhost` or your server's public IP, allowing remote devices to use the SOCKS5 proxy securely.
@@ -87,13 +87,13 @@ You can use either `localhost` or your server's public IP, allowing remote devic
 ### Logs
 
 ```bash
-docker compose logs -f socks-anonimizer
+docker compose logs -f socks-anonymizer
 ```
 
 ### Check container external IP
 
 ```bash
-docker compose exec socks-anonimizer curl https://ip.me
+docker compose exec socks-anonymizer curl https://ip.me
 ```
 
 ## Healthcheck
