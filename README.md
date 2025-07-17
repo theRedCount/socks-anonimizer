@@ -19,8 +19,11 @@ SOCKS anonymizer is a Docker-based solution that provides a secure SOCKS5 proxy 
 ````
 .
 ├── README.md
+├── LICENSE
 ├── .env.example
 ├── docker-compose.yml
+├── .img
+    ├── logo.png
 └── service
     ├── Dockerfile
     ├── sockd.conf
